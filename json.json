@@ -1,0 +1,27 @@
+[
+    {
+        "query": "example search term",
+        "timestamp": "2024-09-23T12:34:56Z",
+        "type": "standard",
+        "userId": "user123",
+        "resultsCount": 42,
+        "sessionId": "session456",
+        "searchEngine": "Google",
+        "deviceType": "mobile",
+        "location": {
+            "city": "San Francisco",
+            "country": "USA"
+        },
+        "duration": 15,
+        "userFeedback": {
+            "rating": 4,
+            "comment": "Found what I was looking for!"
+        },
+        "relatedSearches": ["example related term 1", "example related term 2"],
+        "context": ["academic", "research"],
+        "browser": {
+            "name": "Chrome",
+            "version": "93.0.4577.63"
+        }
+    }
+]

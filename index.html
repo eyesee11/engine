@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="styles.css" rel="stylesheet" />
+  <meta name="robots" content="noindex, follow">
+</head>
+  <body>
+    <div class="s01">
+      <form>
+        <fieldset>
+        <legend style="color: rgb(42, 51, 51);">Discover the Real Search Engine</legend>
+        </fieldset>
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <input id="search" type="text" placeholder="What are you looking for?" />
+          </div>
+        <!-- <div class="input-field second-wrap">
+            <button id="clear-history-button" class="btn-clear" type="button">Clear History</button>
+        </div> -->
+          <div class="input-field third-wrap">
+            <button class="btn-search" type="button" onclick="alert('JAAAA MAI NAHI BATAUNGAAA')">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- <button id="clearHistory">Clear History</button>
+    <h2>Search History</h2>
+        <ul id="searchHistory"></ul>
+    </div> -->
+
+    <!-- <button onclick="alert('Test Alert!')">Test Alert</button> -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('btn-search');
+        const clearHistoryButton = document.getElementById('clearHistory');
+        const searchHistoryList = document.getElementById('searchHistory');
+
+    
+        function loadHistory() {
+            const history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+            history.forEach(term => {
+                addHistoryItem(term);
+            });
+        }
+
+    
+        searchButton.addEventListener('click', () => {
+            const query = searchInput.value.trim();
+            if (query) {
+                saveSearch(query);
+                displaySearchHistory();
+                alert("JAAAAAA MAI NAHI BATAAAA RAHA"); 
+            }
+            searchInput.value = '';
+        });
+    
+        clearHistoryButton.addEventListener('click', () => {
+            localStorage.removeItem('searchHistory');
+            displaySearchHistory();
+        });
+    
+        function saveSearch(query) {
+            let history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+            if (!history.includes(query)) {
+                history.push(query);
+                localStorage.setItem('searchHistory', JSON.stringify(history));
+            }
+        }
+        function addHistoryItem(term) {
+            const li = document.createElement('li');
+            li.textContent = term;
+            searchHistoryList.appendChild(li);
+        }
+        function displaySearchHistory() {
+            searchHistoryList.innerHTML = '';
+            loadHistory();
+        
+
+        }
+    });
+</script>
+</body>
+</html>
